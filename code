@@ -1,0 +1,29 @@
+public class DNA {
+  //determines whether there is a protein in a strand of DNA.
+
+  public static void main(String[] atgs){
+    
+    String dna1 = "ATGCGATACGCTTGA";
+    String dna2 = "ATGCGATACGTGA";
+    String dna3 = "ATTAATATGTACTGA";
+
+    String startCodon = "ATG";
+    String stopCodon = "TGA";
+    
+    String dna;
+
+    dna = dna3;
+
+    boolean startDna = dna.indexOf(startCodon) == 0;
+    boolean stopDna = dna.indexOf(stopCodon) == dna.length() - 3;
+    String nucleotides = dna.substring(3,dna.length() - 3);
+    int nucleotidesLength = nucleotides.length();
+  
+    if((startDna && stopDna) && (nucleotidesLength % 3 == 0)){
+      System.out.println("you got Protein: " + nucleotides);
+    }else {
+      System.out.println("no Protein");
+    }
+
+  }
+}
